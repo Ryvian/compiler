@@ -183,7 +183,8 @@ int type_check_aux(int cl, type_list *l, bool is_in_function = false) {
 		int type = get<0>((*l)[i]);
 		if (type == TYPE_MAP) {
 			cl += 4;
-			cl -= 3;	//mitigate the deprecated "X"
+			if(get<0>((*l)[i-1]) != TYPE_FUNCTION)
+				cl -= 3;	//mitigate the deprecated "X"
 			int s_nxt = get<0>((*l)[i + 1]);
 			if (s_nxt == TYPE_ARRAY || \
 				s_nxt == TYPE_FUNCTION) {
@@ -211,7 +212,7 @@ int type_check_aux(int cl, type_list *l, bool is_in_function = false) {
 		}
 		else if (type == TYPE_FUNCTION) {
 			p_num++;
-			if (is_in_function) {
+			if (i == 1 && is_in_function) {
 				error(cl, 35);
 				return 0;
 			}
@@ -255,6 +256,7 @@ int print_type_size(type_list *l) {
 		if (get<0>((*l)[i]) == TYPE_ARRAY) {
 			size *= get<1>((*l)[i]);
 		}
+		else break;
 	}
 	return size;
 }
@@ -297,7 +299,10 @@ void print_type_list(type_list * l, int s){
 		cout << ")";
 	}
 	else if(type == TYPE_MAP){
-		cout << "\b\b=> ";
+		if(get<0>((*l)[s-1]) != TYPE_FUNCTION)
+			cout << "\b\b=> ";
+		else
+			cout << " => ";
 		print_type_list(l, s+1);
 	}
 	else{

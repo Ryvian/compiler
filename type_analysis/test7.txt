@@ -1,2 +1,4 @@
+int *deh[20](int **x, void *y), **babygo(int *x, void **y, int z)[20];
+int (*tatata)[20][30];
+int **whre(int **z, int a[20](int **x, void *y));
 int **babygoo(int *x, int **y, void z)[30];
-int **babyfuck[10](int *x, int **y, void eee);
