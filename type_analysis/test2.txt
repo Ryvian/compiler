@@ -1,4 +1,4 @@
-int (*p)(int (*x)[20], int **y);
+int (*p)(int (*x)[20], int **y), void *ak47[22][33];
 int (*x)[20];
 int y[20][30];
 int *z[30][40];
