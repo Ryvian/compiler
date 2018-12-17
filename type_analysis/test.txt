@@ -1,0 +1,7 @@
+int *p; 
+int *pa[20][30]; 
+int (**pp); 
+int (**ptr[20])[30]; 
+int (*f(int i,int *j))[20];  
+int *fa(int i)[20]; 
+int af[20](int k);

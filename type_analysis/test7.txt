@@ -1,0 +1,2 @@
+int **babygoo(int *x, int **y, void z)[30];
+int **babyfuck[10](int *x, int **y, void eee);

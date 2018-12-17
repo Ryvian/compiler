@@ -1,0 +1,21 @@
+var i, j, k;
+procedure p;
+begin
+  if i = 2 then 
+      begin
+        i := j := k := 3;
+        k := 5;
+      end
+    
+  else 
+    begin
+        i := 4;
+    end
+       
+end;
+
+begin
+  i := 2;
+  call p;
+  call p;
+end.

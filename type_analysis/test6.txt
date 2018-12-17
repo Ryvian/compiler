@@ -1,0 +1,4 @@
+int (*p)(int (*x)[20], int **y, int hanoi(int *x, int **y));
+int ** y, *red[20];
+int *deh[20](int x, int y), **babygo(int *x, void **y, int z)[20];
+int (*tatata)[20][30];
